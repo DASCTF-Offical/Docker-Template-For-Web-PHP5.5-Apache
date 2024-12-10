@@ -1,5 +1,9 @@
 FROM debian:jessie
 
+
+RUN echo ZGViIGh0dHA6Ly9hcmNoaXZlLmRlYmlhbi5vcmcvZGViaWFuLyBqZXNzaWUgbWFpbiBjb250cmliIG5vbi1mcmVlCmRlYi1zcmMgaHR0cDovL2FyY2hpdmUuZGViaWFuLm9yZy9kZWJpYW4vIGplc3NpZSBtYWluIGNvbnRyaWIgbm9uLWZyZWUKZGViIGh0dHA6Ly9hcmNoaXZlLmRlYmlhbi5vcmcvZGViaWFuLXNlY3VyaXR5LyBqZXNzaWUvdXBkYXRlcyBtYWluIGNvbnRyaWIgbm9uLWZyZWUKZGViLXNyYyBodHRwOi8vYXJjaGl2ZS5kZWJpYW4ub3JnL2RlYmlhbi1zZWN1cml0eS8gamVzc2llL3VwZGF0ZXMgbWFpbiBjb250cmliIG5vbi1mcmVl |base64 -d > /etc/apt/sources.list && \
+    apt-get update
+    
 # persistent / runtime deps
 RUN apt-get update && apt-get install -y ca-certificates curl libxml2 --no-install-recommends && rm -r /var/lib/apt/lists/*
 
